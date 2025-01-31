@@ -5,6 +5,7 @@ interface Book {
     genre: string;
     rating: number;
     totalCopies: number;
+    isLoadedBook: boolean;
     availableCopies: number;
     description: string;
     coverColor: string;
