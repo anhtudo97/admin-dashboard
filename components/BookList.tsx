@@ -1,6 +1,6 @@
 import React from "react";
 import BookCard from "@/components/BookCard";
-
+import { sampleBooks } from "@/constants";
 interface Props {
     title: string;
     books: Book[];
@@ -8,7 +8,6 @@ interface Props {
 }
 
 const BookList = ({ title, books, containerClassName }: Props) => {
-    if (books.length < 2) return;
 
     return (
         <section className={containerClassName}>

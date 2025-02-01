@@ -4,6 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { users } from "@/database/schema";
 import { eq } from "drizzle-orm";
 import { db } from "@/database/drizzle";
+import config from "./lib/config";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     session: {
@@ -60,4 +61,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return session;
         },
     },
+    secret: config.env.secret
 });

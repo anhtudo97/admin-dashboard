@@ -5,14 +5,14 @@ interface Book {
     genre: string;
     rating: number;
     totalCopies: number;
-    isLoadedBook: boolean;
+    isLoadedBook?: boolean;
     availableCopies: number;
     description: string;
     coverColor: string;
     coverUrl: string;
     videoUrl: string;
     summary: string;
-    createdAt: Date | null;
+    createdAt?: Date | null;
 }
 
 interface AuthCredentials {

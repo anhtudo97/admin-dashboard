@@ -7,6 +7,12 @@ import { desc } from "drizzle-orm";
 
 const Home = async () => {
     const session = await auth();
+    
+    const bookList = (
+        await db
+            .select()
+            .from(books)
+    );
 
     const latestBooks = (await db
         .select()
@@ -20,7 +26,7 @@ const Home = async () => {
 
             <BookList
                 title="Latest Books"
-                books={latestBooks.slice(1)}
+                books={bookList}
                 containerClassName="mt-28"
             />
         </>
